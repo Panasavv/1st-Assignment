@@ -95,8 +95,6 @@ Default
 
 |
                              | **MinorCPU** | **TimingSimpleCPU** |
-                           
-                                   | --- | --- | --- |
 
 | _Number of Ticks_              | 45767000 | 63736000 |
 
@@ -113,8 +111,6 @@ Default
 |
                              | **MinorCPU** | **TimingSimpleCPU** |
 
-                                   | --- | --- | --- |
-
 | _Number of Ticks_              | 57403000 | 74527500 |
 
 | _Sim\_seconds_                 | 0.000057 | 0.000075 |
@@ -129,7 +125,6 @@ Default
                              --mem-type=DDR4\_2400\_8x8
 |
                              | **MinorCPU** | **TimingSimpleCPU** |
-                                  | --- | --- | --- |
 
 | _Number of Ticks_              | 44503000 | 63637000 |
 
