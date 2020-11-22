@@ -97,9 +97,13 @@ Default
                              | **MinorCPU** | **TimingSimpleCPU** |
                                    | --- | --- | --- |
 | _Number of Ticks_              | 45767000 | 63736000 |
+
 | _Sim\_seconds_                 | 0.000046 | 0.000064 |
+
 | _Number of CPU cycles_            | 91534 | 127472 |
+
 | _Number of Instructions Commited_ | 23914 | 23759 |
+
 | _CPI: cycles per instruction_  | 3.827632 | Δεν υπάρχει στο αρχείο, αλλά με μια διαίρεση προκύπτει 5.365209 |
                   
                   
