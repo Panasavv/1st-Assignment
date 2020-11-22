@@ -1,4 +1,5 @@
-![](RackMultipart20201122-4-t5598z_html_20e7695e23e721c1.gif)ΑΡΙΣΤΟΤΕΛΕΙΟ ΠΑΝΕΠΙΣΤΗΜΙΟ ΘΕΣΣΑΛΟΝΙΚΗΣ
+![](RackMultipart20201122-4-t5598z_html_20e7695e23e721c1.gif)
+ΑΡΙΣΤΟΤΕΛΕΙΟ ΠΑΝΕΠΙΣΤΗΜΙΟ ΘΕΣΣΑΛΟΝΙΚΗΣ
 
 ΠΟΛΥΤΕΧΝΙΚΗ ΣΧΟΛΗ
 
@@ -6,11 +7,7 @@
 
 # **Αρχιτεκτονική Προηγμένων Υπολογιστών**
 
-## 1
-
-## η
-
-## Εργαστηριακή Άσκηση
+## 1 η Εργαστηριακή Άσκηση
 
 Παναγιώτης Σαββίδης
 
@@ -25,7 +22,7 @@
  ii) Minor CPU
  iii) HPI CPU
 
-Απότιςπαραπάνω CPU τελικάχρησιμοποιήσαμετην **Minor**
+Από τις παραπάνω CPU τελικά χρησιμοποιήσαμε την **Minor**
 
 **Voltage\_Domain** = 3.3V (by default)
 **Clock speed** = 1GHz (by default)
@@ -33,9 +30,9 @@
 
 **Number of Cores** = 1 (by default)
 
-**Caches** : Εφόσονεπιλέξαμετην Minor CPU θαέχουμε **L1** και **L2** caches
+**Caches** : Εφόσον επιλέξαμε την Minor CPU θα έχουμε **L1** και **L2** caches
 
-Μνήμη : Στηνεντολήπουτρέξαμεδενπροσδιορίσαμεκάτιγιατηνμνήμη (μέσωτηςεντολής –mem) συνεπώςθαληφθούνοι default τιμές.
+Μνήμη : Στην εντολή που τρέξαμε δεν προσδιορίσαμε κάτι για την μνήμη (μέσω της εντολής –mem) συνεπώς θα ληφθούν οι default τιμές.
 **mem-type** = DDR3\_1600\_8x8
 **mem-channels** = 2
 **mem-ranks** = None
@@ -60,9 +57,9 @@
 
 Στη γραμμή 1339 υπάρχει το **Voltage****.**
 
-Σ ![](RackMultipart20201122-4-t5598z_html_bd0f31457fd306a6.jpg) ![](RackMultipart20201122-4-t5598z_html_af1936502a75aba7.jpg) ![](RackMultipart20201122-4-t5598z_html_6f2b4d4e4badb514.jpg) τη γραμμή 58 βρίσκουμε το **cpu**** Clock ****.**
- Με αντίστοιχο τρόπο όπως και πιο
- πάνω , έχουμε 4GHz
+![](RackMultipart20201122-4-t5598z_html_bd0f31457fd306a6.jpg) ![](RackMultipart20201122-4-t5598z_html_af1936502a75aba7.jpg) ![](RackMultipart20201122-4-t5598z_html_6f2b4d4e4badb514.jpg) 
+Στη γραμμή 58 βρίσκουμε το **cpu**** Clock ****.**
+ Με αντίστοιχο τρόπο όπως και πιο πάνω , έχουμε 4GHz
 
 
  Στη γραμμή 1610 υπάρχει το **membus**** type**.
@@ -97,37 +94,35 @@ _C__)_
 Default
 
 |
- | **MinorCPU** | **TimingSimpleCPU** |
-| --- | --- | --- |
-| _Number of Ticks_ | 45767000 | 63736000 |
-| _Sim\_seconds_ | 0.000046 | 0.000064 |
-| _Number of CPU cycles_ | 91534 | 127472 |
+                             | **MinorCPU** | **TimingSimpleCPU** |
+                                   | --- | --- | --- |
+| _Number of Ticks_              | 45767000 | 63736000 |
+| _Sim\_seconds_                 | 0.000046 | 0.000064 |
+| _Number of CPU cycles_            | 91534 | 127472 |
 | _Number of Instructions Commited_ | 23914 | 23759 |
-| _CPI: cycles per instruction_ | 3.827632 | Δεν υπάρχει στο αρχείο, αλλά με μια διαίρεση προκύπτει
- 5.365209 |
-
---sys-clock=400000000
-
-|
- | **MinorCPU** | **TimingSimpleCPU** |
-| --- | --- | --- |
-| _Number of Ticks_ | 57403000 | 74527500 |
-| _Sim\_seconds_ | 0.000057 | 0.000075 |
-| _Number of CPU cycles_ | 114806 | 149055 |
+| _CPI: cycles per instruction_  | 3.827632 | Δεν υπάρχει στο αρχείο, αλλά με μια διαίρεση προκύπτει 5.365209 |
+                  
+                  
+                             --sys-clock=400000000|
+                             | **MinorCPU** | **TimingSimpleCPU** |
+                                   | --- | --- | --- |
+| _Number of Ticks_              | 57403000 | 74527500 |
+| _Sim\_seconds_                 | 0.000057 | 0.000075 |
+| _Number of CPU cycles_           | 114806 | 149055 |
 | _Number of Instructions Commited_ | 23914 | 23759 |
-| _CPI: cycles per instruction_ | 4.800786 | Δεν υπάρχει στο αρχείο, αλλά με μια διαίρεση προκύπτει
- 6.273623 |
+| _CPI: cycles per instruction_  | 4.800786 | Δεν υπάρχει στο αρχείο, αλλά με μια διαίρεση προκύπτει 6.273623 |
 
---mem-type=DDR4\_2400\_8x8
 
-|
- | **MinorCPU** | **TimingSimpleCPU** |
-| --- | --- | --- |
-| _Number of Ticks_ | 44503000 | 63637000 |
-| _Sim\_seconds_ | 0.000045 | 0.000064 |
-| _Number of CPU cycles_ | 89006 | 127274 |
+                             --mem-type=DDR4\_2400\_8x8|
+                             | **MinorCPU** | **TimingSimpleCPU** |
+                                   | --- | --- | --- |
+| _Number of Ticks_              | 44503000 | 63637000 |
+| _Sim\_seconds_                 | 0.000045 | 0.000064 |
+| _Number of CPU cycles_            | 89006 | 127274 |
 | _Number of Instructions Commited_ | 23914 | 23759 |
-| _CPI: cycles per instruction_ | 3.72192 | Δεν υπάρχει στο αρχείο, αλλά με μια διαίρεση προκύπτει 5.356875 |
+| _CPI: cycles per instruction_   | 3.72192 | Δεν υπάρχει στο αρχείο, αλλά με μια διαίρεση προκύπτει 5.356875 |
+
+
 
 Όπως παρατηρούμε, σε όλες τις περιπτώσεις ο MinorCPU τρέχει πιο γρήγορα από τον TimingSimpleCPU (sim\_seconds) και αυτό μπορούμε να το αποδώσουμε στο γεγονός ότι στον MinorCPU υπάρχει το pipeline, συνεπώς δεν χρειάζεται να περιμένει να τελειώσει η προσπέλαση της μνήμης πριν συνεχίσει στην επόμενη εντολή. Η ίδια παρατήρηση γίνεται και από τον αριθμό των ticks σε κάθε περίπτωση.
 
