@@ -95,7 +95,9 @@ Default
 
 |
                              | **MinorCPU** | **TimingSimpleCPU** |
+                           
                                    | --- | --- | --- |
+
 | _Number of Ticks_              | 45767000 | 63736000 |
 
 | _Sim\_seconds_                 | 0.000046 | 0.000064 |
@@ -107,23 +109,36 @@ Default
 | _CPI: cycles per instruction_  | 3.827632 | Δεν υπάρχει στο αρχείο, αλλά με μια διαίρεση προκύπτει 5.365209 |
                   
                   
-                             --sys-clock=400000000|
+                             --sys-clock=400000000
+|
                              | **MinorCPU** | **TimingSimpleCPU** |
+
                                    | --- | --- | --- |
+
 | _Number of Ticks_              | 57403000 | 74527500 |
+
 | _Sim\_seconds_                 | 0.000057 | 0.000075 |
+
 | _Number of CPU cycles_           | 114806 | 149055 |
+
 | _Number of Instructions Commited_ | 23914 | 23759 |
+
 | _CPI: cycles per instruction_  | 4.800786 | Δεν υπάρχει στο αρχείο, αλλά με μια διαίρεση προκύπτει 6.273623 |
 
 
-                             --mem-type=DDR4\_2400\_8x8|
+                             --mem-type=DDR4\_2400\_8x8
+|
                              | **MinorCPU** | **TimingSimpleCPU** |
-                                   | --- | --- | --- |
+                                  | --- | --- | --- |
+
 | _Number of Ticks_              | 44503000 | 63637000 |
+
 | _Sim\_seconds_                 | 0.000045 | 0.000064 |
+
 | _Number of CPU cycles_            | 89006 | 127274 |
+
 | _Number of Instructions Commited_ | 23914 | 23759 |
+
 | _CPI: cycles per instruction_   | 3.72192 | Δεν υπάρχει στο αρχείο, αλλά με μια διαίρεση προκύπτει 5.356875 |
 
 
