@@ -1,0 +1,1 @@
+./build/ARM/gem5.opt configs/example/se.py --cpu-type=TimingSimpleCPU  --caches -c tests/test-progs/MyProg/bin/arm/linux/main_arm

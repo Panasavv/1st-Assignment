@@ -1,0 +1,1 @@
+./build/ARM/gem5.opt configs/example/se.py --cpu-type=MinorCPU --caches -c tests/test-progs/MyProg/bin/arm/linux/main_arm
