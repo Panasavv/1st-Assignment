@@ -85,7 +85,13 @@ in-order CPU με fixed pipeline. Τα χαρακτηριστικά του συ�
 
 ## Απάντηση ερώτησης 2c
 
-Ο συνολικός αριθμός **που προσπελάστηκε η**  **L**** 2 **** cache **φαίνεται στη σειρά 493 στο** stats ****.**** txt**. ![](RackMultipart20201122-4-t5598z_html_6a4781aba2d515d8.jpg)
+Ο συνολικός αριθμός προσπελάσεων της **L2 cache** προκύπτει από τη μεταβλητή 
+`system.cpu_cluster.l2.demand_accesses::total` και είναι ίσος με **479**.
+Σε περίπτωση που η πληροφορία αυτή δεν δινόταν από τον gem5, θα μπορούσε να υπολογιστεί
+από το άθροισμα των τιμών στις μεταβλητές `system.cpu_cluster.l2.ReadCleanReq_accesses::total`,
+`system.cpu_cluster.l2.ReadExReq_accesses::total` και `system.cpu_cluster.l2.ReadSharedReq_accesses::total`,
+οι οποίες 
+
 
 
  Αν αυτό το νούμερο δεν μας δινόταν, θα μπορούσαμε να το υπολογίσουμε από το άθροισμα των σειρών 556,574 και 594, όπως φαίνεται παρακάτω.
