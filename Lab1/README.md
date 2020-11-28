@@ -88,14 +88,12 @@ in-order CPU με fixed pipeline. Τα χαρακτηριστικά του συ�
 Ο συνολικός αριθμός προσπελάσεων της **L2 cache** προκύπτει από τη μεταβλητή 
 `system.cpu_cluster.l2.demand_accesses::total` και είναι ίσος με **479**.
 Σε περίπτωση που η πληροφορία αυτή δεν δινόταν από τον gem5, θα μπορούσε να υπολογιστεί
-από το άθροισμα των τιμών στις μεταβλητές `system.cpu_cluster.l2.ReadCleanReq_accesses::total`,
-`system.cpu_cluster.l2.ReadExReq_accesses::total` και `system.cpu_cluster.l2.ReadSharedReq_accesses::total`,
-οι οποίες 
+από το άθροισμα των τιμών στις μεταβλητές `system.cpu_cluster.cpus.icache.overall_mshr_misses::total` 
+**(332)** και `system.cpu_cluster.cpus.dcache.overall_mshr_misses::total` **(147)** , νούμερο που συνάδει 
+με το **479** που βρήκαμε παραπάνω. Οι μεταβλητές αυτές αναπαριστούν τον αριθμό των συνολικών misses της 
+instruction cache και data cache αντίστοιχα, τα οποία αναζητούνται μετά στην L2 cache.
 
 
-
- Αν αυτό το νούμερο δεν μας δινόταν, θα μπορούσαμε να το υπολογίσουμε από το άθροισμα των σειρών 556,574 και 594, όπως φαίνεται παρακάτω.
- ![](RackMultipart20201122-4-t5598z_html_a0353886942e12e.jpg) ![](RackMultipart20201122-4-t5598z_html_9a2886e9b808fd95.jpg) ![](RackMultipart20201122-4-t5598z_html_fd748152eed452e5.jpg)
 
 **3.**
 
