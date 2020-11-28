@@ -84,7 +84,7 @@
             "name": "clk_domain",
             "path": "system.clk_domain",
             "clock": [
-                2500
+                1000
             ],
             "domain_id": -1,
             "eventq_index": 0,
@@ -611,7 +611,7 @@
             "name": "cpu_clk_domain",
             "path": "system.cpu_clk_domain",
             "clock": [
-                500
+                2500
             ],
             "domain_id": -1,
             "eventq_index": 0,

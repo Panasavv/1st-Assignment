@@ -1,1 +1,2 @@
-./build/ARM/gem5.opt configs/example/se.py --cpu-type=MinorCPU --sys-clock=400000000 --caches -c tests/test-progs/MyProg/bin/arm/linux/main_arm
+./build/ARM/gem5.opt configs/example/se.py --cpu-type=MinorCPU --cpu-clock="400MHz" --caches -c tests/test-progs/MyProg/bin/arm/linux/main_arm
+
