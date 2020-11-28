@@ -1,79 +1,97 @@
-![](RackMultipart20201122-4-t5598z_html_20e7695e23e721c1.gif)
 ΑΡΙΣΤΟΤΕΛΕΙΟ ΠΑΝΕΠΙΣΤΗΜΙΟ ΘΕΣΣΑΛΟΝΙΚΗΣ
 
 ΠΟΛΥΤΕΧΝΙΚΗ ΣΧΟΛΗ
 
 ΤΜΗΜΑ ΗΛΕΚΤΡΟΛΟΓΩΝ ΜΗΧΑΝΙΚΩΝ &amp; ΜΗΧΑΝΙΚΩΝ ΥΠΟΛΟΓΙΣΤΩΝ
 
-# **Αρχιτεκτονική Προηγμένων Υπολογιστών**
+# Αρχιτεκτονική Προηγμένων Υπολογιστών - 1η Εργαστηριακή Άσκηση
 
-## 1 η Εργαστηριακή Άσκηση
+## Απάντηση ερώτησης 1
 
-Παναγιώτης Σαββίδης
-
-8094
-
-ΘΕΣΣΑΛΟΝΙΚΗ 2020
-
-1.
-
-**CPU types:**
+### Διαθέσιμοι τύποι CPU:
  i) Atomic Simple CPU
  ii) Minor CPU
  iii) HPI CPU
 
-Από τις παραπάνω CPU τελικά χρησιμοποιήσαμε την **Minor**
+Από τις παραπάνω CPU τελικά χρησιμοποιήσαμε την **MinorCPU**, η οποία είναι μια απλή,
+in-order CPU με fixed pipeline. Τα χαρακτηριστικά του συστήματος έχουν ως εξής:
 
-**Voltage\_Domain** = 3.3V (by default)
-**Clock speed** = 1GHz (by default)
-**CPU cluster Voltage** = 1.2V (by default)
-
-**Number of Cores** = 1 (by default)
-
-**Caches** : Εφόσον επιλέξαμε την Minor CPU θα έχουμε **L1** και **L2** caches
-
-Μνήμη : Στην εντολή που τρέξαμε δεν προσδιορίσαμε κάτι για την μνήμη (μέσω της εντολής –mem) συνεπώς θα ληφθούν οι default τιμές.
-**mem-type** = DDR3\_1600\_8x8
-**mem-channels** = 2
-**mem-ranks** = None
-**mem-size** = 2GB
-**membus** = SystemXBar()
-
-1. _A ![](RackMultipart20201122-4-t5598z_html_efa8ee00c207c888.jpg) )_
-
-Το **cpu**** type**βρίσκεται στη γραμμή 65
-
-![](RackMultipart20201122-4-t5598z_html_459df04d381d61d.jpg)
-
-Στη γραμμή 1652 φαίνεται το **Voltage**** Domain**.
-
-![](RackMultipart20201122-4-t5598z_html_6d397abdcdd6358b.jpg)
-
-Στη γραμμή 44 βρίσκουμε το **Clock**** Domain**.
-
-Το 1000 αναφέρεται στα ticks, άρα έχουμε
-
-![](RackMultipart20201122-4-t5598z_html_6343c37c2c900f2.jpg)
-
-Στη γραμμή 1339 υπάρχει το **Voltage****.**
-
-![](RackMultipart20201122-4-t5598z_html_bd0f31457fd306a6.jpg) ![](RackMultipart20201122-4-t5598z_html_af1936502a75aba7.jpg) ![](RackMultipart20201122-4-t5598z_html_6f2b4d4e4badb514.jpg) 
-Στη γραμμή 58 βρίσκουμε το **cpu**** Clock ****.**
- Με αντίστοιχο τρόπο όπως και πιο πάνω , έχουμε 4GHz
+* Τάση συστήματος: **3.3V**
+* Συχνότητα ρολογιού CPU: **4GHz**
+* Συχνότητα ρολογιού συστήματος: **1GHz**
+* Τάση πυρήνα: **1.2V**
+* Αριθμός πυρήνων: **1**
 
 
- Στη γραμμή 1610 υπάρχει το **membus**** type**.
+### Caches
 
-Τέλος στη σειρά 113 βρίσκεται το **number**** of ****Cores**.
+Εφόσον επιλέξαμε την Minor CPU θα έχουμε **L1** και **L2** caches, με τις
+ιδιότητες που φαίνονται παρακάτω. Καθώς το αρχείο `starter_se.py` δεν περιέχει
+πληροφορίες περί μεγέθους και associativity των cache, εκτός από τα ονόματα των
+κλάσεων της Python που τις ορίζουν (γραμμές 66-69). Οι κλάσεις καθεαυτές μπορούν
+να βρεθούν στο αρχείο `devices.py`, το οποίο βρίσκεται στον ίδιο φάκελο με το
+`starter_se.py`.
+
+* Μέγεθος γραμμής: **64 bytes**
+* L1 instruction cache: **48 kB, 3-way-associative**
+* L1 data cache: **32 kB, 2-way-associative**
+* L2 cache: **1 MB, 16-way-associative**
 
 
-_B__)_
- Το συνολικό νούμερο των **committed**** Instructions** φαίνονται στις γραμμές 14 και 15. ![](RackMultipart20201122-4-t5598z_html_13dc36bcebf61525.jpg)
+### Μνήμη
 
-Αυτή η διαφορά εμφανίζεται γιατί στη δεύτερη σειρά υπολογίζονται και τα microoperations.
+Στην εντολή που τρέξαμε δεν προσδιορίσαμε κάτι για την μνήμη (μέσω της εντολής –mem)
+συνεπώς θα ληφθούν οι default τιμές: 
+* Τύπος μνήμης: **DDR3\_1600\_8x8** (DDR3 1600 MHz)
+* Κανάλια: **2**
+* Μέγεθος μνήμης: **2GB**
+* Δίαυλος (bus): **SystemXBar()**
 
-_C__)_
- Ο συνολικός αριθμός **που προσπελάστηκε η**  **L**** 2 **** cache **φαίνεται στη σειρά 493 στο** stats ****.**** txt**. ![](RackMultipart20201122-4-t5598z_html_6a4781aba2d515d8.jpg)
+
+## Απάντηση ερώτησης 2a
+
+Σύμφωνα με το αρχείο `config.ini` που δημιουργήθηκε από τον gem5, οι παραπάνω
+παράμετροι συστήματος μπορούν να επιβεβαιωθούν από τις τιμές του αρχείου αυτού,
+όπως στον ακόλουθο πίνακα:
+
+| Στοιχείο             | Σχετική μεταβλητή | Τομέας στο αρχείο `config.ini`           | Τιμή μεταβλητής    |
+|----------------------|-------------------|------------------------------------------|--------------------|
+| Αριθμός πυρήνων      |     numThreads    | system.cpu_cluster.cpus                  | 1                  |
+| Συχνότητα ρολ. συστ. |       clock       | system.clk_domain                        | 1000 (ticks)       |
+| Τάση τροφοδ. συστ.   |      voltage      | system.voltage_domain                    | 3.3 (V)            |
+| Τύπος CPU            |        type       | system.cpu_cluster.cpus                  | MinorCPU           |
+| Συχνότ. ρολογ. CPU   |       clock       | system.cpu_cluster.clk_domain            | 250 (ticks)        |
+| Τάση πυρήνα CPU      |      voltage      | system.cpu_cluster.voltage_domain        | 1.2 (V)            |
+| Μέγεθος RAM          |     mem_ranges    | system                                   | 2147483648 (bytes) |
+| Τύπος RAM            |                   |                                          |                    |
+| Μέγεθος γρ. cache    | cache\_line\_size | system                                   | 64 (bytes)         |
+| Μέγ. L1 instr. cache |        size       | system.cpu_cluster.cpus.icache           | 49152 (bytes)      |
+| Τύπος L1 inst. cache |       assoc       | system.cpu_cluster.cpus.icache           | 3 (ways)           |
+| Μέγ. L1 data cache   |        size       | system.cpu_cluster.cpus.dcache           | 32768 (bytes)      |
+| Τύπος L1 data cache  |       assoc       | system.cpu_cluster.cpus.dcache           | 2 (ways)           |
+| Μέγ. L2 cache        |        size       | system.cpu_cluster.l2                    | 1048576 (bytes)    |
+| Τύπος L2 cache       |       assoc       | system.cpu_cluster.l2                    | 16 (ways)          |
+
+## Απάντηση ερώτησης 2b
+
+Με βάση τα αποτελέσματα στο αρχείο `stats.txt`, ο αριθμός των committed instruction για το
+εκτελέσιμο `hello` είναι **5028**. (μεταβλητή `system.cpu.committedInsts`). Παρατηρούμε ότι
+ο αριθμός των εκτελεσθέντων πράξεων είναι **5834** (μεταβλητή `sim_ops`). Η διαφορά προκύπτει
+από το γεγονός ότι οι εντολές που στέλνονται προς τη CPU για εκτέλεση δεν έχουν 1-προς-1
+αντιστοιχία με τα πραγματικά "micro-operations" που εκτελεί ο επεξεργαστής στο υλικό του.
+Με άλλα λόγια, μία εντολή από την ISA της CPU μπορεί να απαιτεί παραπάνω από ένα micro-operation
+για να εκτελεστεί.
+
+
+## Απάντηση ερώτησης 2c
+
+Ο συνολικός αριθμός προσπελάσεων της **L2 cache** προκύπτει από τη μεταβλητή 
+`system.cpu_cluster.l2.demand_accesses::total` και είναι ίσος με **479**.
+Σε περίπτωση που η πληροφορία αυτή δεν δινόταν από τον gem5, θα μπορούσε να υπολογιστεί
+από το άθροισμα των τιμών στις μεταβλητές `system.cpu_cluster.l2.ReadCleanReq_accesses::total`,
+`system.cpu_cluster.l2.ReadExReq_accesses::total` και `system.cpu_cluster.l2.ReadSharedReq_accesses::total`,
+οι οποίες 
+
 
 
  Αν αυτό το νούμερο δεν μας δινόταν, θα μπορούσαμε να το υπολογίσουμε από το άθροισμα των σειρών 556,574 και 594, όπως φαίνεται παρακάτω.
