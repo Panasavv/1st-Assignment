@@ -1,0 +1,1 @@
+sh sims2.sh 64kB 2 64kB 2 2MB 8 64
