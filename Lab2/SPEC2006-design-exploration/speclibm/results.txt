@@ -1,0 +1,21 @@
+Benchmarks	system.cpu.cpi	system.cpu.dcache.overall_miss_rate::total	system.cpu.icache.overall_miss_rate::total	system.l2.overall_miss_rate::total
+default		3.472501	0.049017	0.000091	0.999921 # default
+speclibm_1	3.472549	0.049017	0.000085	0.999953 # inst cache size 64k
+
+speclibm_2	3.472549	0.049017	0.000085	0.999954 # ic assoc 4
+speclibm_3	3.472549	0.049017	0.000084	0.999960 # ic assoc 8
+
+speclibm_4	3.472501	0.049018	0.000091	0.999919 # dcache size 32k
+speclibm_5	3.472501	0.049017	0.000091	0.999923 # dcache size 128k
+
+speclibm_6	3.472501	0.049017	0.000091	0.999925 # dcache assoc 4
+speclibm_7	3.472501	0.049017	0.000091	0.999925 # dcache assoc 8
+
+speclibm_8	3.474637	0.049017	0.000091	0.999921 # L2 size 1MB
+speclibm_9	3.468252	0.049017	0.000091	0.999921 # L2 size 4MB
+
+speclibm_10	3.472501	0.049017	0.000091	0.999921 # L2 assoc 2
+speclibm_11	3.472501	0.049017	0.000091	0.999921 # L2 assoc 4
+
+speclibm_12	5.649303	0.098032	0.000075	0.999972 # cache line size 32
+speclibm_13	2.515268	0.024510	0.000110	0.999794 # cache line size 128
