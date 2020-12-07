@@ -1,0 +1,27 @@
+Benchmarks	system.cpu.cpi	system.cpu.dcache.overall_miss_rate::total	system.cpu.icache.overall_miss_rate::total	system.l2.overall_miss_rate::total
+default   	1.674353    	0.014248    	0.000077    	0.295243 # default (32 2 64 2 2 9 8 64)
+specbzip_1	1.674112	0.014248	0.000072	0.295222 # inst. cache size 64k
+
+default   	1.674353    	0.014248    	0.000077    	0.295243 # default (32 2 64 2 2 9 8 64)
+specbzip_2	1.673883	0.014248	0.000070	0.295252 # ic assoc 4
+specbzip_3	1.674067	0.014249	0.000069	0.295258 # ic assoc 8
+
+default   	1.674353    	0.014248    	0.000077    	0.295243 # default (32 2 64 2 2 9 8 64)
+specbzip_4	1.708159	0.017941	0.000077	0.230509 # dcache size 32k
+specbzip_5	1.645676	0.011250	0.000077	0.382587 # dcache size 128k
+
+default   	1.674353    	0.014248    	0.000077    	0.295243 # default (32 2 64 2 2 9 8 64)
+specbzip_6	1.665469	0.013342	0.000077	0.317118 # dcache assoc 4
+specbzip_7	1.659371	0.012735	0.000077	0.333687 # dcache assoc 8
+
+default   	1.674353    	0.014248    	0.000077    	0.295243 # default (32 2 64 2 2 9 8 64)
+specbzip_8	1.718786	0.014842	0.000063	0.330520 # L2 size 1MB
+specbzip_9	1.636786	0.014829	0.000063	0.240418 # L2 size 4MB
+
+default   	1.674353    	0.014248    	0.000077    	0.295243 # default (32 2 64 2 2 9 8 64)
+specbzip_10	1.678466	0.014830	0.000063	0.286762 # L2 assoc 2
+specbzip_11	1.671387	0.014833	0.000063	0.278725 # L2 assoc 4
+
+default   	1.674353    	0.014248    	0.000077    	0.295243 # default (32 2 64 2 2 9 8 64)
+specbzip_12	1.798316	0.017058	0.000074	0.421404 # cache line size 32
+specbzip_13	1.633501	0.013936	0.000076	0.170376 # cache line size 128
