@@ -1,0 +1,28 @@
+Associativity Dynamic read energy (nJ) Dynamic write energy (nJ)
+2	0.303592	0.615022
+4	0.482228	0.564153
+8	0.825942	0.794309
+16	1.86033		1.89074
+32	4.18548		4.14587
+64	8.81739		8.63432
+
+
+Converting to relative energy (divide by 2-way assoc value)
+the best fit polynomial is:
+
+	0.46 + 0.25x +0.0076x^{2} - 0.00007x^{3} (x: 0-64)
+
+
+Rationale:
+
+Cache associativity reduces miss rates, but at cost of complexity and power
+consumption. Our cost function takes into account:
+ - monetary cost (for L1-L2 cache sizes)
+ - complexity cost (L1-L2 cache associativity)
+ 
+The above polynomial approximates the relative power consumption per read
+as a rough measure of complexity. Data was taken from simulation in CACTI
+(cache sim mentioned in P&H) of a 90nm process cache (128k, 64 byte blocks).
+
+For simplicity purposes, we assume that the same relationship exists between
+associativity and "complexity cost" regardless of cache size.

@@ -1,0 +1,16 @@
+Rationale:
+
+As stated in [1], L1 and L2 caches are often implemented as SRAM modules.
+Therefore, a rough estimate of the monetary cost (in EUR) of L1 and L2 cache
+per KB can be given by the lines:
+
+	0.34x for L2 cache (assume L2 access time 5 nsec)
+	2.23x for L1 cache (assume L1 access time 1 nsec)
+
+where x equals cache size in KB (1 KB = 1000B)
+
+Data origin was Mouser and Arrow Electronics prices for SRAM modules of
+the respective access times.
+
+
+[1]: Computer Architecture: A Quantitative Approach (5th ed.), ch. 2.3, p. 97
