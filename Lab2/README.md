@@ -116,6 +116,28 @@ system clock domain είναι υπεύθυνο για τη διατήρηση �
 ![specsjeng-dcache](./SPEC2006-design-exploration/graphs/specsjeng/specsjeng-dcmiss.png)
 ![specsjeng-l2](./SPEC2006-design-exploration/graphs/specsjeng/specsjeng-l2miss.png)
 
+## Απάντηση ερώτησης 1
+
+Στο βήμα αυτό επιλέξαμε να κάνουμε 16 διαφορετικές δοκιμές για κάθε benchmark και σε καθε
+δοκιμή αλλάζαμε μια τιμή μόνο από τις default. Αρχικά αλλάξαμε το μέγεθος της L1
+instruction σε 64kB. Στην 2η και 3η δοκιμή, αυξήσαμε το associativity της L1 instruction
+σε 4 και 8 αντίστοιχα. Οι δοκιμές 4,5 και 15 αφορούν το size της L1 data και οι τιμές
+είναι αντίστοιχα 32kB, 128kB και 256kB. Στην 6η και 7η δοκιμή, αυξήσαμε το associativity
+της L1 data σε 4 και 8 αντίστοιχα. Οι δοκιμές 8 και 9 έχουν να κάνουν με το size της L2
+με τιμές 1MB και 4MB αντίστοιχα. Το default associativity της L2 είναι 8, οπότε στις
+δοκιμές 10 και 11 το μειώσαμε σε 2way και 4way. Τέλος στις δοκιμές 12, 13 και 14 το 
+μέγεθος που αλλάξαμε ήταν το cache line size σε 32b, 128b και 256b. Μετά από έρευνα και
+δοκιμές σε κάθε benchmark προέκυψαν κάποιες τιμές που ελαχιστοποιούν το cpi και αυτή ειναι
+η 16η και τελευταία δοκιμή. Η 16η δοκιμή σε κάθε benchmark φαίνεται στη συνέχεια:
+
+| Benchmark | L1 instruction size | L1 instruction associativity | L1 data size | L1 data associativity | L2 size | L2 associativity | Cache Line Size |
+|:---------:|:-------------------:|:----------------------------:|:------------:|:---------------------:|:-------:|:----------------:|:---------------:|
+|    bzip   |         32kB        |               4              |     256kB    |           8           |   4MB   |         4        |       128       |
+|   hmmer   |         32kB        |               2              |     256kB    |           8           |   2MB   |         8        |       128       |
+|    libm   |         32kB        |               2              |     64kB     |           2           |   4MB   |         8        |       256       |
+|    mcf    |         32kB        |               8              |     128kB    |           8           |   4MB   |         4        |        32       |
+|   sjeng   |         64kB        |               4              |     128kB    |           4           |   4MB   |         4        |       256       |
+
 
 ## Απάντηση ερώτησης 2
 
