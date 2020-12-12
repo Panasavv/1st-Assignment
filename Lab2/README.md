@@ -82,13 +82,39 @@ system clock domain είναι υπεύθυνο για τη διατήρηση �
 
 
 # Βήμα 2
+Τα γραφήματα για CPI και miss rates κάθε benchmark σε όλα τα configurations παρουσιάζονται
+παρακάτω. Η κόκκινη γραμμή δείχνει το αποτέλεσμα που έδωσε στο εκάστοτε benchmark η default
+ρύθμιση του gem5.
 
+## specbzip
+![specbzip-cpi](./SPEC2006-design-exploration/graphs/specbzip/specbzip-cpi.png)
+![specbzip-icache](./SPEC2006-design-exploration/graphs/specbzip/specbzip-icmiss.png)
+![specbzip-dcache](./SPEC2006-design-exploration/graphs/specbzip/specbzip-dcmiss.png)
+![specbzip-l2](./SPEC2006-design-exploration/graphs/specbzip/specbzip-l2miss.png)
 
+## spechmmer
+![spechmmer-cpi](./SPEC2006-design-exploration/graphs/spechmmer/spechmmer-cpi.png)
+![spechmmer-icache](./SPEC2006-design-exploration/graphs/spechmmer/spechmmer-icmiss.png)
+![spechmmer-dcache](./SPEC2006-design-exploration/graphs/spechmmer/spechmmer-dcmiss.png)
+![spechmmer-l2](./SPEC2006-design-exploration/graphs/spechmmer/spechmmer-l2miss.png)
 
+## speclibm
+![speclibm-cpi](./SPEC2006-design-exploration/graphs/speclibm/speclibm-cpi.png)
+![speclibm-icache](./SPEC2006-design-exploration/graphs/speclibm/speclibm-icmiss.png)
+![speclibm-dcache](./SPEC2006-design-exploration/graphs/speclibm/speclibm-dcmiss.png)
+![speclibm-l2](./SPEC2006-design-exploration/graphs/speclibm/speclibm-l2miss.png)
 
+## specmcf
+![specmcf-cpi](./SPEC2006-design-exploration/graphs/specmcf/specmcf-cpi.png)
+![specmcf-icache](./SPEC2006-design-exploration/graphs/specmcf/specmcf-icmiss.png)
+![specmcf-dcache](./SPEC2006-design-exploration/graphs/specmcf/specmcf-dcmiss.png)
+![specmcf-l2](./SPEC2006-design-exploration/graphs/specmcf/specmcf-l2miss.png)
 
-
-
+## specsjeng
+![specsjeng-cpi](./SPEC2006-design-exploration/graphs/specsjeng/specsjeng-cpi.png)
+![specsjeng-icache](./SPEC2006-design-exploration/graphs/specsjeng/specsjeng-icmiss.png)
+![specsjeng-dcache](./SPEC2006-design-exploration/graphs/specsjeng/specsjeng-dcmiss.png)
+![specsjeng-l2](./SPEC2006-design-exploration/graphs/specsjeng/specsjeng-l2miss.png)
 
 
 ## Απάντηση ερώτησης 2
@@ -170,7 +196,22 @@ c δεν είναι παρά μια best-fit καμπύλη πάνω στις μ
 
 ## Κοστολόγηση πιθανών συνδυασμών
 
+Τα κόστη των συνδυασμών που περιγράφονται παραπάνω φαίνονται στον ακόλουθο πίνακα:
 
+| L1 inst. cache size (KB) | L1 data cache size (KB) | L2 cache size (KB) | L1 inst. cache assoc. | L1 data cache assoc. | L2 cache assoc. |   Score   |
+|:------------------------:|:-----------------------:|:------------------:|:---------------------:|:--------------------:|:---------------:|:---------:|
+|            32            |            64           |        2000        |           2           |           2          |        8        |  898.9702 |
+|            64            |            64           |        2000        |           2           |           2          |        8        |  970.3302 |
+|            32            |            64           |        2000        |           4           |           2          |        8        |  899.5575 |
+|            32            |            64           |        2000        |           8           |           2          |        8        |  900.8909 |
+|            32            |            32           |        2000        |           2           |           2          |        8        |  827.6102 |
+|            32            |           128           |        2000        |           2           |           2          |        8        | 1041.6902 |
+|            32            |            64           |        2000        |           2           |           4          |        8        |  899.5575 |
+|            32            |            64           |        2000        |           2           |           8          |        8        |  900.8909 |
+|            32            |            64           |        1000        |           2           |           2          |        8        |  558.9702 |
+|            32            |            64           |        4000        |           2           |           2          |        8        |  1578.970 |
+|            32            |            64           |        2000        |           2           |           2          |        2        |  897.0495 |
+|            32            |            64           |        2000        |           2           |           2          |        8        |  898.9702 |
 
 
 
