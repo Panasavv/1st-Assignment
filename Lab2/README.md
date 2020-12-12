@@ -6,6 +6,7 @@
 
 # Αρχιτεκτονική Προηγμένων Υπολογιστών - 1η Εργαστηριακή Άσκηση
 
+# Βήμα 1
 ## Απάντηση ερώτησης 1
 
 Ο επεξεργαστής που εξομοιώνει ο gem5 διαθέτει τα ακόλουθα χαρακτηριστικά
@@ -18,15 +19,27 @@
 | L2             | 2 MB  | 8-way         | 64                |
 
 
-## Απάντηση ερώτησης 2 - Γραφήματα 1 GHz
+## Απάντηση ερώτησης 2
 
+Οι μετρήσεις έγιναν με τις default ρυθμίσεις του MinorCPU, με μόνη μεταβολή
+στη συχνότητα του ρολογιού πυρήνα.
 Τα αποτελέσματα των benchmarks φαίνονται στα παρακάτω γραφήματα:
 
-![test](./benchmark-graphs/1GHz/1GHz-simtime.png)
-<!-- ![1GHz-CPI](./benchmark-graphs/1GHz/1GHz-cpi.png) -->
-<!-- ![1GHz-DCacheMR](./benchmark-graphs/1GHz/1GHz-dcmiss.png) -->
-<!-- ![1GHz-ICacheMR](./benchmark-graphs/1GHz/1GHz-icmiss.png) -->
-<!-- ![1GHz-L2MR](./benchmark-graphs/1GHz/1GHz-l2miss.png) -->
+![1GHz-SimTime](./benchmark-graphs/1GHz/1GHz-simtime.png)
+![1GHz-CPI](./benchmark-graphs/1GHz/1GHz-cpi.png) 
+![1GHz-DCacheMR](./benchmark-graphs/1GHz/1GHz-dcmiss.png) 
+![1GHz-ICacheMR](./benchmark-graphs/1GHz/1GHz-icmiss.png) 
+![1GHz-L2MR](./benchmark-graphs/1GHz/1GHz-l2miss.png) 
+
+Ομοίως και για 2 GHz:
+
+![2GHz-SimTime](./benchmark-graphs/2GHz/2GHz-simtime.png)
+![2GHz-CPI](./benchmark-graphs/2GHz/2GHz-cpi.png) 
+![2GHz-DCacheMR](./benchmark-graphs/2GHz/2GHz-dcmiss.png) 
+![2GHz-ICacheMR](./benchmark-graphs/2GHz/2GHz-icmiss.png) 
+![2GHz-L2MR](./benchmark-graphs/2GHz/2GHz-l2miss.png)
+
+
 
 ### Caches
 
