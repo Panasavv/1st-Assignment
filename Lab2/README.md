@@ -82,6 +82,41 @@ system clock domain είναι υπεύθυνο για τη διατήρηση �
 
 
 # Βήμα 2
+Τα γραφήματα για CPI και miss rates κάθε benchmark σε όλα τα configurations παρουσιάζονται
+παρακάτω. Η κόκκινη γραμμή δείχνει το αποτέλεσμα που έδωσε στο εκάστοτε benchmark η default
+ρύθμιση του gem5.
+
+## specbzip
+![specbzip-cpi](./SPEC2006-design-exploration/graphs/specbzip/specbzip-cpi.png)
+![specbzip-icache](./SPEC2006-design-exploration/graphs/specbzip/specbzip-icmiss.png)
+![specbzip-dcache](./SPEC2006-design-exploration/graphs/specbzip/specbzip-dcmiss.png)
+![specbzip-l2](./SPEC2006-design-exploration/graphs/specbzip/specbzip-l2miss.png)
+
+## spechmmer
+![spechmmer-cpi](./SPEC2006-design-exploration/graphs/spechmmer/spechmmer-cpi.png)
+![spechmmer-icache](./SPEC2006-design-exploration/graphs/spechmmer/spechmmer-icmiss.png)
+![spechmmer-dcache](./SPEC2006-design-exploration/graphs/spechmmer/spechmmer-dcmiss.png)
+![spechmmer-l2](./SPEC2006-design-exploration/graphs/spechmmer/spechmmer-l2miss.png)
+
+## speclibm
+![speclibm-cpi](./SPEC2006-design-exploration/graphs/speclibm/speclibm-cpi.png)
+![speclibm-icache](./SPEC2006-design-exploration/graphs/speclibm/speclibm-icmiss.png)
+![speclibm-dcache](./SPEC2006-design-exploration/graphs/speclibm/speclibm-dcmiss.png)
+![speclibm-l2](./SPEC2006-design-exploration/graphs/speclibm/speclibm-l2miss.png)
+
+## specmcf
+![specmcf-cpi](./SPEC2006-design-exploration/graphs/specmcf/specmcf-cpi.png)
+![specmcf-icache](./SPEC2006-design-exploration/graphs/specmcf/specmcf-icmiss.png)
+![specmcf-dcache](./SPEC2006-design-exploration/graphs/specmcf/specmcf-dcmiss.png)
+![specmcf-l2](./SPEC2006-design-exploration/graphs/specmcf/specmcf-l2miss.png)
+
+## specsjeng
+![specsjeng-cpi](./SPEC2006-design-exploration/graphs/specsjeng/specsjeng-cpi.png)
+![specsjeng-icache](./SPEC2006-design-exploration/graphs/specsjeng/specsjeng-icmiss.png)
+![specsjeng-dcache](./SPEC2006-design-exploration/graphs/specsjeng/specsjeng-dcmiss.png)
+![specsjeng-l2](./SPEC2006-design-exploration/graphs/specsjeng/specsjeng-l2miss.png)
+
+
 ## Απάντηση ερώτησης 2
 
 Στο `specbzip`  παρατηρούμε βελτίωση έως 7% στο CPI, 35.3% στο L1 data miss rate, 12.5%
