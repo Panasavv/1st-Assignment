@@ -1,6 +1,6 @@
 from sys import argv
 from csv import DictWriter
-from os import listdir
+from os import listdir, path
 
 def find_sections(fileLines: list):
     coreStartIndex, coreEndIndex, L2StartIndex, L2EndIndex = 0, 0, 0, 0
@@ -25,6 +25,7 @@ def parse_file(file):
     with open(file) as f:
         lines = f.readlines()
 
+    fileName = path.splitext(path.splitext(path.basename(file))[0])[0]
     section_indices = find_sections(lines)
 
     rawCoreSection = list(map(lambda l: l.strip(), lines[section_indices[0]:section_indices[1]]))
@@ -36,6 +37,7 @@ def parse_file(file):
     cleanResults = lambda z: float(z.split('=')[1].split()[0])
 
     core = {
+        "caseName": fileName,
         "area": cleanResults(coreSection[0]),
         "peakDynamicPower": cleanResults(coreSection[1]),
         "runtimeDynamicPower": cleanResults(coreSection[5]),
@@ -44,6 +46,7 @@ def parse_file(file):
         "cpuPeakPower": cleanResults(lines[section_indices[4]])
     }
     l2 = {
+        "caseName": fileName,
         "area": cleanResults(l2Section[0]),
         "peakDynamicPower": cleanResults(l2Section[1]),
         "runtimeDynamicPower": cleanResults(l2Section[5]),
@@ -55,9 +58,9 @@ def parse_file(file):
 
 
 if __name__ == "__main__":
-    contents = listdir(argv[1])
-    coreFields = ["area", "peakDynamicPower", "runtimeDynamicPower", "subthresholdLeakage", "gateLeakage","cpuPeakPower"]
-    l2Fields = ["area", "peakDynamicPower", "runtimeDynamicPower", "subthresholdLeakage", "gateLeakage"]
+    contents = [j for j in listdir(argv[1]) if "time" not in j]
+    coreFields = ["caseName", "area", "peakDynamicPower", "runtimeDynamicPower", "subthresholdLeakage", "gateLeakage","cpuPeakPower"]
+    l2Fields = ["caseName", "area", "peakDynamicPower", "runtimeDynamicPower", "subthresholdLeakage", "gateLeakage"]
         
     with open("results_core.csv", "w", newline='') as corecsv, \
         open("results_l2.csv", 'w', newline='') as l2csv:
