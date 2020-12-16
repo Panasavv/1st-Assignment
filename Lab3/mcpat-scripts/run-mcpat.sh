@@ -1,6 +1,6 @@
 #!/bin/bash
 
-for INPUT in $(find . -name spec*.xml | head -1)
+for INPUT in $(find . -name spec*.xml)
 do
 	echo $INPUT
 	DEST_DIR=mcpat-results/$(basename $(dirname $INPUT))
