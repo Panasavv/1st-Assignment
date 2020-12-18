@@ -1,4 +1,5 @@
 caseName,area,peakDynamicPower,runtimeDynamicPower,subthresholdLeakage,gateLeakage,cpuPeakPower
+spechmmer,7.22483,1.95501,0.337493,1.098,0.00726281,3.86567
 spechmmer_7,6.38891,2.18571,0.437238,0.846024,0.00480872,3.84194
 spechmmer_4,4.59384,1.47789,0.113871,0.696764,0.0036123,2.98366
 spechmmer_opt,14.1275,6.52007,1.1138,1.41425,0.00845101,10.6181
