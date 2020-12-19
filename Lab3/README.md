@@ -54,8 +54,17 @@ leakage είναι τα ίδια τα transistors, συγκεκριμένα η �
 ## Απάντηση ερώτησης 1
 
 
-## Απάντηση ερώτησης 2
-
+## Απάντηση ερώτησης 2 - Γραφήματα peak power
+### specbzip
+![specbzip-pp](./graphs/specbzip/specbzip-peak.png)
+### spechmmer
+![spechmmer-pp](./graphs/spechmmer/spechmmer-peak.png)
+### speclibm
+![speclibm-pp](./graphs/speclibm/speclibm-peak.png)
+### specmcf
+![specmcf-pp](./graphs/specmcf/specmcf-peak.png)
+### specsjeng
+![specsjeng-pp](./graphs/specsjeng/specsjeng-peak.png)
 
 ## Αξιολόγηση εργασίας
 
