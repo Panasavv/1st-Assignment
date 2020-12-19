@@ -55,6 +55,12 @@ leakage είναι τα ίδια τα transistors, συγκεκριμένα η �
 
 
 ## Απάντηση ερώτησης 2 - Γραφήματα peak power
+
+Η μέγιστη (peak) ισχύς για κάθε περίπτωση απεικονίζεται στα παρακάτω διαγράμματα,
+χωρισμένη ανά benchmark. Η κόκκινη γραμμή δείχνει την ισχύ που καταγράφηκε για την
+περίπτωση του `MinorCPU` χωρίς καμία μεταβολή στα χαρακτηριστικά του (2GHz clock,
+32kB 2-way L1 inst. cache, 64kB 2-way L1 data cache, 2MB 8-way L2 cache,
+64 byte cache line).
 ### specbzip
 ![specbzip-pp](./graphs/specbzip/specbzip-peak.png)
 ### spechmmer
@@ -65,6 +71,22 @@ leakage είναι τα ίδια τα transistors, συγκεκριμένα η �
 ![specmcf-pp](./graphs/specmcf/specmcf-peak.png)
 ### specsjeng
 ![specsjeng-pp](./graphs/specsjeng/specsjeng-peak.png)
+
+
+## Πιθανές αιτίες σφαλμάτων
+
+Ο McPAT δεν κάνει πλήρη προσομοίωση των κυκλωμάτων του επεξεργαστή σε επίπεδο
+transistor όπως θα έκανε κάποιος προσομοιωτής mixed-signal (πχ. το SPICE). Μια
+πλήρης προσομοίωση όμως με κάποιο εργαλείο όπως το SPICE ναι μεν θα έδινε πολύ
+ακριβέστερα αποτελέσματα (ο McPAT έχει απόκλιση 10-20% από τις πραγματικές τιμές
+των ζητούμενων metrics, [3] σελ.6-7) αλλά μπορεί να δώσει τιμές πολύ πιο γρήγορα.
+Μια ακόμα πιθανή πηγή σφαλμάτων είναι και ο gem5, καθώς κάνει από προεπιλογή μόνο
+syscall emulation, αγνοώντας τυχόν καθυστερήσεις οφειλόμενες στο υλικό και ως εκ
+τούτου μπορεί να παρουσιάζει λάθη στο χρόνο εκτέλεσης.
+Μάλιστα, το μοντέλο `TimingSimpleCPU` μπορεί να περιορίσει ως ένα βαθμό τα λάθη,
+καθώς λαμβάνει υπόψη του το timing του υλικού. Ο συνδυασμός των δύο προγραμμάτων
+πολλαπλασιάζει τα σφάλματα στις παραγόμενες τιμές, αν δεν γίνεται διόρθωση πριν
+τον τελικό υπολογισμό.
 
 ## Αξιολόγηση εργασίας
 
@@ -81,3 +103,4 @@ leakage είναι τα ίδια τα transistors, συγκεκριμένα η �
 
 [1]: https://en.wikipedia.org/wiki/Processor_power_dissipation
 [2]: https://web.archive.org/web/20150812030010/http://download.intel.com/design/network/papers/30117401.pd
+[3]: https://www.hpl.hp.com/research/mcpat/micro09.pdf
