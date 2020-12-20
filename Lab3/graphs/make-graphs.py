@@ -66,6 +66,17 @@ def create_plot(title, x_label, dframe_core, dframe_l2, parameter_under_test, fi
     plt.savefig(file_name, bbox_inches='tight')
     axes.clear()
 
+def get_edp(core_joules, l2_joules, benchmarkname):
+    result = pd.DataFrame()
+    result["caseName"] = core_joules["caseName"] # same at both
+    result["edp"] = core_joules["runtimeDynamicPower"] + l2_joules["runtimeDynamicPower"] + \
+        core_joules["gateLeakage"] + l2_joules["gateLeakage"] + core_joules["subthresholdLeakage"] + \
+        l2_joules["subthresholdLeakage"]
+
+    result.to_csv(benchmarkname + "-edp.csv")
+    
+
+
 if __name__ == "__main__":
     power_core = pd.read_csv(argv[1], sep=',')
     power_l2 = pd.read_csv(argv[2], sep=',')
@@ -76,17 +87,9 @@ if __name__ == "__main__":
     core_dframe_joules = make_energy_dframe(power_core, runtime, joules=True)
     l2_dframe_joules = make_energy_dframe(power_l2, runtime, joules=True)
 
-    create_plot("Runtime dynamic energy - " + argv[4].capitalize(), "Joules", core_dframe_joules, l2_dframe_joules, "runtimeDynamicPower", argv[4] + "-rde.png")
     create_plot("Runtime dynamic power - " + argv[4].capitalize(), "Watts", core_dframe_watts, l2_dframe_watts, "runtimeDynamicPower", argv[4] + "-rdp.png")
     create_plot("Active processor area - " + argv[4].capitalize(), "mm^2", core_dframe_watts, l2_dframe_watts, "area", argv[4] + "-area.png")
-    create_plot("Subthreshold Leakage Energy - " + argv[4].capitalize(), "Joules", core_dframe_joules, l2_dframe_joules, "subthresholdLeakage", argv[4] + "-stle.png")
     create_plot("Subthreshold Leakage Power - " + argv[4].capitalize(), "Watts", core_dframe_watts, l2_dframe_watts, "subthresholdLeakage", argv[4] + "-stlp.png")
-    create_plot("Gate Leakage Energy - " + argv[4].capitalize(), "Joules", core_dframe_joules, l2_dframe_joules, "gateLeakage", argv[4] + "-gle.png")
-    create_plot("Gate Leakage Power - " + argv[4].capitalize(), "Watts", core_dframe_watts, l2_dframe_watts, "gateLeakage", argv[4] + "-glp.png")
-
+    create_plot("Gate Leakage Power - " + argv[4].capitalize(), "Watts", core_dframe_watts, l2_dframe_watts, "gateLeakage", argv[4] + "-glp.png") 
     create_plot("Peak Power - " + argv[4].capitalize(), "Watts", core_dframe_watts, l2_dframe_watts, "cpuPeakPower", argv[4] + "-peak.png", True)
-    
-
-    
-    
-
+    get_edp(core_dframe_joules, l2_dframe_joules, argv[4])    
